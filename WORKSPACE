@@ -16,7 +16,7 @@ http_archive(
     urls = ["https://github.com/ali5h/rules_pip/archive/%s.tar.gz" % PIP_RULE_VERSION],
 )
 
-load("@com_github_ali5h_rules_pip//:defs.bzl", "pip_import")s
+load("@com_github_ali5h_rules_pip//:defs.bzl", "pip_import")
 
 pip_import(
     name = "pip_deps",
