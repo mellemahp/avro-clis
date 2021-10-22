@@ -1,0 +1,9 @@
+avro-gen==0.3.0
+avro-python3==1.10.2
+frozendict==2.0.6
+pytz==2021.3
+six==1.16.0
+tzlocal==4.0.1
+backports.zoneinfo==0.2.1 
+pytz-deprecation-shim==0.1.0.post0
+tzdata==2021.4

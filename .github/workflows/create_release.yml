@@ -1,0 +1,24 @@
+name: CreateRelease
+on: [push, pull_request]
+jobs:
+  bazel_build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Setup bazel
+        uses: jwlawson/actions-setup-bazel@v1
+        with:
+          bazel-version: "4.0.0"
+      - name: Build Java Executable
+        run: bazel build //java:release
+      - name: Build Python Zip
+        run: bazel build //python:cli_binary
+      - name: Release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: dist/bin/java/avro_cli.jar dist/bin/python/cli_binary.zip
+          body: "Automatic deployment for ${{ github.sha }}"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit: ${{ github.sha }}
+          tag: 1.0.0
