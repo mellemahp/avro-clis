@@ -17,7 +17,7 @@ jobs:
       - name: Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: dist/bin/java/avro_cli.jar dist/bin/python/cli_binary.zip
+          artifacts: "dist/bin/java/avro_cli.jar, dist/bin/python/cli_binary.zip"
           body: "Automatic deployment for ${{ github.sha }}"
           token: ${{ secrets.GITHUB_TOKEN }}
           commit: ${{ github.sha }}
