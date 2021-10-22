@@ -13,7 +13,7 @@ http_archive(
     name = "com_github_ali5h_rules_pip",
     sha256 = PIP_RULE_SHA,
     strip_prefix = "rules_pip-%s" % PIP_RULE_VERSION,
-    urls = ["https://github.com/ali5h/rules_pip/archive/%s.tar.gz" % PIP_RULE_SHA],
+    urls = ["https://github.com/ali5h/rules_pip/archive/%s.tar.gz" % PIP_RULE_VERSION],
 )
 
 load("@com_github_ali5h_rules_pip//:defs.bzl", "pip_import")
